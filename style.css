@@ -1,0 +1,269 @@
+@import url("https://fonts.google.com/specimen/Inter");
+body {
+  font-family: "Inter", sans-serif;
+}
+
+body.dark-theme {
+  background-color: hsl(232, 19%, 15%);
+  color: #fff;
+}
+
+body.social-media {
+  background-color: aliceblue;
+}
+
+body:not(.dark-theme) {
+  background-color: hsl(0, 0%, 100%);
+}
+
+body.dark-theme .slider {
+  background-color: bisque;
+}
+
+.main-block {
+  padding: 5px;
+  width: 95%;
+}
+
+.head-block {
+  height: auto;
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.head-block .head {
+  background-color: hsl(228, 19%, 70%);
+  padding: 5px;
+  font-size: 15px;
+  height: auto;
+  font-weight: bold;
+  margin: 2px 0px;
+  background-color: transparent;
+}
+.head-block .head p {
+  color: hsl(228, 12%, 44%);
+  margin-top: -15px;
+  margin-bottom: 15px;
+}
+.head-block .toggle-container {
+  position: fixed;
+  top: 60px;
+  right: 80px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+}
+.head-block .toggle-container p {
+  font-weight: bold;
+  margin-top: 3px;
+  margin-right: 5px;
+  font-size: 18px;
+  padding: 5px;
+  color: hsl(228, 12%, 44%);
+}
+.head-block .toggle-container .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.head-block .toggle-container .switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 35px;
+}
+.head-block .toggle-container .switch .slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: rgb(40, 118, 227);
+  border-radius: 35px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: background-color 0.4s;
+}
+.head-block .toggle-container .switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: hsl(230, 22%, 74%);
+  transition: transform 0.4s;
+  border-radius: 50%;
+}
+.head-block .toggle-container .switch input:checked + .slider:before {
+  transform: translateX(36px);
+}
+
+.followers-block {
+  height: 300px;
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  padding: 10px;
+  height: auto;
+  padding: 0px auto;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: repeat(4, auto);
+}
+.followers-block :hover {
+  background-color: hsl(228, 19%, 70%);
+  cursor: pointer;
+}
+.followers-block .social-media {
+  background-color: hsl(227, 47%, 96%);
+  border-radius: 5px;
+  margin: 8px;
+  font-size: 16px;
+  padding: 5px;
+  height: auto;
+}
+.followers-block .social-media .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2px;
+  align-items: center;
+  font-weight: 500;
+  padding: 5px;
+}
+.followers-block .social-media .icon-feedback {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2px;
+  align-items: center;
+  font-weight: 500;
+  padding: 5px;
+  color: hsl(163, 72%, 41%);
+  padding-bottom: 0px;
+}
+.followers-block .social-media .icon-feedback .feedback {
+  color: hsl(163, 72%, 41%);
+}
+.followers-block .social-media:last-child {
+  padding-left: -10px;
+}
+.followers-block .social-media:last-child p {
+  padding-left: 0px;
+}
+.followers-block .social-media:last-child .icon-feedback {
+  color: hsl(348, 97%, 39%);
+}
+.followers-block .social-media h1 {
+  font-size: 50px;
+  padding: 5px;
+  padding-left: 45px;
+  margin: 0px;
+}
+.followers-block .social-media p:nth-child(3) {
+  margin: 0px;
+  padding: 2px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: hsl(228, 12%, 44%);
+  letter-spacing: 5px;
+  padding-left: 45px;
+}
+.followers-block .social-media p:nth-child(2) {
+  margin: 0px;
+  padding: 5px;
+  padding-left: 15px;
+  color: hsl(228, 12%, 44%);
+}
+
+#over-p {
+  background-color: hsl(228, 19%, 70%);
+  padding: 5px;
+  font-size: 15px;
+  height: auto;
+  font-weight: bold;
+  margin: 2px 0px;
+  background-color: transparent;
+  color: hsl(228, 12%, 44%);
+  font-size: 22px;
+}
+
+.overview-block {
+  height: 300px;
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+  padding: 10px;
+  height: auto;
+  padding: 0px auto;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: repeat(2, auto);
+  justify-content: space-between;
+}
+.overview-block .views {
+  background-color: hsl(227, 47%, 96%);
+  border-radius: 5px;
+  margin: 8px;
+  font-size: 16px;
+  padding: 5px;
+  height: auto;
+}
+.overview-block .name-icn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2px;
+  align-items: center;
+  font-weight: 500;
+  padding: 5px;
+  justify-content: space-between;
+  padding: 2px 10px;
+  font-weight: 600;
+  color: hsl(228, 12%, 44%);
+}
+.overview-block .views-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2px;
+  align-items: center;
+  font-weight: 500;
+  padding: 5px;
+  justify-content: space-between;
+}
+.overview-block .views-data .id-per {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 2px;
+  align-items: center;
+  font-weight: 500;
+  padding: 5px;
+  justify-content: space-between;
+  color: hsl(163, 72%, 41%);
+  font-size: 14px;
+  font-weight: 700;
+}
+.overview-block .views-data .id-per .icon-facebook {
+  color: hsl(348, 97%, 39%);
+}
+
+.social-media-1 {
+  border-top: solid 3px hsl(208, 92%, 53%);
+}
+
+.social-media-2 {
+  border-top: solid 3px hsl(203, 89%, 53%);
+}
+
+.social-media-3 {
+  border-top: solid 3px hsl(348, 72%, 56%);
+}
+
+.social-media-4 {
+  border-top: solid 3px hsl(348, 97%, 39%);
+}
+
+/*# sourceMappingURL=style.css.map */

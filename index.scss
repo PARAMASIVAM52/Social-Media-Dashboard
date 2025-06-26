@@ -1,0 +1,245 @@
+@use "sass:math";
+@import url('https://fonts.google.com/specimen/Inter');
+@import "variables";
+@import "colors";
+$icon-img:url('SocialMedia_Dashboard\src\icon-up.svg');
+$main-font:'Inter',sans-serif; 
+$main-font-size:12px;
+body{
+    font-family: $main-font;
+}
+@mixin main-text{
+    background-color: $Very-Pale-Blue-Top-BG-Pattern;
+    padding: 5px;
+    font-size: 15px;
+    height: auto;
+    font-weight:bold;
+    margin: 2px 0px;
+}
+@mixin flex-arrange{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    margin: 2px;
+    align-items:center;
+    font-weight: 500;
+    padding: 5px;
+};
+@mixin grid-arrange{
+    height: 300px;
+    width: 100%;
+    display: grid;
+    justify-content: space-between;
+    padding: 10px;
+    height: auto;
+    padding: 0px auto;
+}
+@mixin box-grid{
+    background-color: $Light-Grayish-Blue-Card-BG;
+    border-radius: 5px;
+    margin: 8px;
+    font-size: 16px;
+    padding: 5px;
+    height: auto;
+    
+}
+body.dark-theme{
+    background-color: $Very-dark-blue-top-BGPattern;
+    color: #fff;
+}
+body.social-media{
+        background-color: aliceblue;
+}
+body:not(.dark-theme){
+    background-color: $Light-Theme-White-BG;
+}
+body.dark-theme .slider{
+    background-color: bisque
+}
+.main-block{
+    padding: 5px;
+    width: 95%;
+}
+
+.head-block{
+    height: auto;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;    
+    .head{
+        @include main-text();
+        background-color: transparent;
+        p{
+            color: $Dark-Grayish-Blue-Text;
+            margin-top: -15px;
+            margin-bottom: 15px;
+        }
+    }
+    .toggle-container{
+        position: fixed;
+        top: 60px;
+        right: 80px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        p{
+            font-weight: bold;
+            margin-top: 3px;
+            margin-right: 5px;
+            font-size: 18px;
+            padding: 5px;
+            color: $Dark-Grayish-Blue-Text;
+            background-color: transparent;
+        }
+        .switch input{
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+        }
+        .switch{
+            position: relative;
+            display: inline-block;
+            width: 70px;
+            height: 35px;
+            .slider{
+                position: absolute;
+                cursor: pointer;
+                background-color:rgb(23, 114, 243);
+                border-radius: 35px;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transition: background-color 0.4s;
+            }
+            .slider:before{
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: $light-theme-toggle;
+                transition: transform 0.4s;
+                border-radius: 50%;
+            }
+            input:checked + .slider:before{
+                transform: translateX(36px);
+            }
+        }
+    }
+}
+.followers-block{
+    @include grid-arrange();
+    grid-template-columns: repeat(4,250px);
+    grid-template-rows: repeat(4,auto);
+    :hover{
+        background-color: $Very-Pale-Blue-Top-BG-Pattern;
+        cursor: pointer;
+    }  
+    .social-media{
+        @include box-grid();
+        .icon{
+            @include flex-arrange;
+        }
+        .icon-feedback{
+            @include flex-arrange;
+            color: $Lime-Green;
+            padding-bottom: 0px;
+            .feedback{
+                color: $Lime-Green;
+            }
+        }
+        &:last-child{
+            padding-left: -10px;
+
+            p{
+                padding-left: 0px;
+            }
+            .icon-feedback{
+                color: $YouTube;
+            }
+        }
+        h1{
+            font-size: 50px;
+            padding: 5px;
+            padding-left: 45px;
+            margin: 0px;
+        }
+        p{
+            &:nth-child(3){
+            margin: 0px;
+            padding: 2px;
+            font-family:'Courier New', Courier, monospace;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: $Dark-Grayish-Blue-Text;
+            letter-spacing: 5px;
+            padding-left: 45px;
+            }
+            &:nth-child(2){
+            margin: 0px;
+            padding: 5px;
+            padding-left: 15px;
+            color: $Dark-Grayish-Blue-Text;
+            }
+        }
+
+    }
+}
+#over-p{
+    @include main-text();
+    background-color: transparent;
+    color: $Dark-Grayish-Blue-Text;
+    font-size: $main-font-size+10px;
+}
+.overview-block{
+    @include grid-arrange();
+    grid-template-columns: repeat(4,250px);
+    grid-template-rows: repeat(2,auto);
+    justify-content: space-between;
+    .views{
+        @include box-grid();
+    }
+    .name-icn{
+        @include flex-arrange();
+        justify-content:space-between;
+        
+        padding: 2px 10px;
+        font-weight: 600;
+        color: $Dark-Grayish-Blue-Text;
+    }
+    .views-data{
+        @include flex-arrange();
+        justify-content:space-between;
+    .id-per{
+        @include flex-arrange();
+        justify-content:space-between;
+        color: $Lime-Green;
+        font-size: 14px;
+        font-weight: 700;
+        .icon-facebook{
+            color: $YouTube;
+        } 
+    }
+    
+}
+}
+
+$colors1:(
+            "1": hsl(208, 92%, 53%),
+            "2": hsl(203, 89%, 53%),
+            "3": hsl(348, 72%, 56%),
+            "4": hsl(348, 97%, 39%)
+        );
+//each control directive
+
+@each $key,$value in $colors1{
+    .social-media-#{$key}{
+        border-top:solid 3px $value;
+        
+    }
+}
